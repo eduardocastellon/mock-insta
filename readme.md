@@ -1,4 +1,4 @@
-# Instagram Clone
+# Mock Instagram
 
 A full-stack Instagram-style social media app: a Node.js/Express/MongoDB backend and a React/Vite frontend, in a single repository (merged from previously separate frontend/backend repos).
 
