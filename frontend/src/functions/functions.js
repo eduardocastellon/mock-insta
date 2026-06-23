@@ -1,7 +1,7 @@
 //BACKEND URLS
 // const backend_url = "http://localhost:5051";
 
-const backend_url = "https://mock-instagram-backend-production.up.railway.app";
+const backend_url = "";
 
 //_____________________________________________________________________________________________________________________________________________________________________________________________________
 //FUNCTIONS TO HANDLE CREATING ACCOUNT OR LOGIN
