@@ -1,0 +1,6 @@
+- argon2 //PASS HASHING
+- express //ROUTES CRUD
+- cors //CROSS ORIGIN SHARING
+- mongoose //MONGODB
+- mongodb
+- dotenv

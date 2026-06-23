@@ -1,0 +1,64 @@
+text database: mongodb
+image database: 
+data:
+    table:
+        users:
+            1. id key=primary -> int => required
+            2. date_created -> int => required
+            3. unique_id (for posts) -> string => required
+            4. firstname -> string => required
+            5. lastname -> string => required
+            6. date of birth -> string => required
+            7. username -> string => required
+            8. email -> string => required
+            9. password -> string => required
+            10. followers -> string[] (stores user unique_ids) => optional
+            11. following -> string[] (stores user unique_ids) => optional
+            12. private -> bool (true for private, false for public) => required
+
+            Notes:
+                - If user is deleted, all the posts uploaded by this user are also deleted.
+                - Must implement a way to check if email and username exists when creating account to ensure no duplicates
+
+        posts:
+            1. id key=primary -> int
+            2. post_id -> string (for reference to comments)
+            3. date_created -> int
+            4. created_by (user's unique_id) -> string
+            5. image_id (image's unique_id) -> string
+            6. likes -> int
+            7. description -> string
+            8. tags -> string[]
+
+            Notes:
+                - Only the user with matching "created_by" id can delete the post
+
+        comments:
+            1. id key=primary -> int
+            2. date_created -> int
+            3. created_by -> string (user's unique_id)
+            4. post_id -> string (tied to the id from posts)
+
+            Notes:
+                - Only the user with matching "created_by" id can delete their comments
+
+        stories:
+            1. id key=primary -> int
+            2. date_created -> int
+            3. created_by -> (user's unique_id) -> string
+            4. image_id (image's unique_id) -> string
+
+            Notes:
+                - Only the user with matching "created_by" id can delete their stories
+        
+        images:
+            1. id key=primary -> int
+            2. date_created -> int
+            3. unique_id -> string
+
+            Notes:
+                - Upon upload the image will be compressed to a smaller size and resolution
+                - If image does not exist, or has been deleted, area will display "[Image Not Available]"
+
+
+
